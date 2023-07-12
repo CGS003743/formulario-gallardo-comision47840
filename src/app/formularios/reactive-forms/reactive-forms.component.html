@@ -1,0 +1,62 @@
+
+<form class="row " [formGroup]="userForm">
+    <div class ="col-6"><h1>FORMULARIO</h1>
+      <label for="email" class="form-label">Email</label>
+      <input formControlName="email"
+      type="email" 
+      class="form-control" 
+      [class.is-invalid]="emailControl.touched && emailControl.invalid"
+       id="email"
+       placeholder="Ingresa tu email">
+       <div class="invalid-feedback">
+        ingresa tu email
+       </div>
+    </div>
+    <div class="  mt-5 col-6 form-group">
+      <label for="password" class="form-label">Password</label>
+      <input formControlName="password"
+      type="password"
+       class="form-control"
+        id="password" 
+        placeholder="Ingresa tu contraseña">
+    </div>
+    <div class=" col-6 form-group">
+      <label for="city">Ciudad:</label>
+      <input formControlName="city"
+             type="text"
+             class="form-control"
+             [class.is-invalid]="cityControl.touched && cityControl.invalid"
+             id="city" placeholder="Ingresa tu ciudad ">
+             <div class="invalid-feedback">
+              el campo es requerido
+             </div>
+          </div>
+    <div class=" col-6 form-group">
+      <label for="state" class="form-label">State</label>
+      <input formControlName="state"
+      type="text" 
+      class="form-control" 
+      id="state
+      " placeholder="Ingresa tu estado">
+    </div>
+    <div class="form-group">
+      <label for="zip" class="form-label">Zip</label>
+      <input formControlName="zip" 
+      type="text" class="form-control" id="zip" placeholder="Ingresa tu código postal">
+    </div>
+    <div class="form-group">
+      <label for="address" class="form-label">Address</label>
+      <textarea class="form-control" id="address" rows="3" placeholder="Ingresa tu dirección"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary">Agregar dirección</button>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="checkMeOut">
+      <label class="form-check-label" for="checkMeOut">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+  </form>
+  <div class="col-4">
+
+    <h5>valor</h5>
+    <pre>{{userForm.value|json}}</pre>
+  </div>
